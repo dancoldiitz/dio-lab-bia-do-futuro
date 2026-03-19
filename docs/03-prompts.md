@@ -145,5 +145,5 @@ Não posso indicar investimentos específicos, mas posso te orientar sobre:
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Observação 1]
-- [Observação 2]
+- Registrei que existe diferença de comportamento entre o ChatGPT e o CLaude, o ChatGPT me atendeu bem mesmo com alguns erros de interpretações onde tive que corrigí-lo, e o Claude criou um mini versão dentro dele de um chat onde deu erro algumas vezes até conseguir integrar a chave API.
+
