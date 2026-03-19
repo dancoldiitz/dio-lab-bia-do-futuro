@@ -5,9 +5,9 @@
 | Arquivo | Formato | Para que Serve na Finova |
 |---------|---------|---------------------|
 | `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+| `perfil_investidor.json` | JSON | Personalizar recomendações sobre as dúvidas e necessidades do cliente |
+| `produtos_financeiros.json` | JSON | Conhecer os produtos para que eles possam ser ensinados e indicados ao cliente |
+| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente e usar essas informações de forma didática |
 
 ---
 
@@ -143,13 +143,25 @@ PRODUTOS DISPONÍVEIS:
 O exemplo do conteúdo montado abaixo, se baseia nos dados originais do conhecimento.
 
 ```
-Dados do Cliente:
+DADOS DO CLIENTE:
 - Nome: João Silva
 - Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Objetivo: Construir reserva de emergência
+- Reserva atual: R$ 10.000 (meta: R$ 15.000)
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
+RESUMO DE GASTOS:
+- Moradia: R$ 1.500
+- Alimentação: R$ 570
+- Transporte: R$ 295
+- Saúde: R$ 185.00
+- Lazer: R$ 55.00
+- Total de saídas: R$ 2.488,90
+
+PRODUTOS DISPONÍVEIS PARA EXPLICAR:
+- Tesouro Selic (risco baixo)
+- CDB Liquidez Diária (risco baixo)
+- LCI/LCA (risco baixo)
+- Fundo Imobiliário FII (risco médio)
+- Fundo de Ações (risco alto)
 ...
 ```
