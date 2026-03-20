@@ -21,26 +21,3 @@
     }
   ]
 }
-{
-  "nome": "Daniel Santos",
-  "idade": 31,
-  "profissao": "Analista de Dados",
-  "renda_mensal": 15000.00,
-  "perfil_investidor": "arrojado",
-  "objetivo_principal": "Construir patrimônio",
-  "patrimonio_total": 500000.00,
-  "reserva_emergencia_atual": 50000.00,
-  "aceita_risco": true,
-  "metas": [
-    {
-      "meta": "Abrir novo negócio",
-      "valor_necessario": 150000.00,
-      "prazo": "2026-06"
-    },
-    {
-      "meta": "Alugar escritório",
-      "valor_necessario": 50000.00,
-      "prazo": "2027-12"
-    }
-  ]
-}
