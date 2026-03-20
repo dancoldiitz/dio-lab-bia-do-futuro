@@ -48,23 +48,23 @@ Para simplificar, podemos "injetar" os dados em nosso prompt, garantido que o ag
 ```text
 DADOS DO CLIENTE E PERFIL:
 {
-  "nome": "Daniel Santos",
-  "idade": 31,
-  "profissao": "Analista de Dados",
-  "renda_mensal": 15000.00,
-  "perfil_investidor": "arrojado",
-  "objetivo_principal": "Construir patrimônio",
-  "patrimonio_total": 500000.00,
-  "reserva_emergencia_atual": 50000.00,
-  "aceita_risco": true,
+  "nome": "João Silva",
+  "idade": 32,
+  "profissao": "Analista de Sistemas",
+  "renda_mensal": 5000.00,
+  "perfil_investidor": "moderado",
+  "objetivo_principal": "Construir reserva de emergência",
+  "patrimonio_total": 15000.00,
+  "reserva_emergencia_atual": 10000.00,
+  "aceita_risco": false,
   "metas": [
     {
-      "meta": "Abrir novo negócio",
-      "valor_necessario": 150000.00,
+      "meta": "Completar reserva de emergência",
+      "valor_necessario": 15000.00,
       "prazo": "2026-06"
     },
     {
-      "meta": "Alugar escritório",
+      "meta": "Entrada do apartamento",
       "valor_necessario": 50000.00,
       "prazo": "2027-12"
     }
