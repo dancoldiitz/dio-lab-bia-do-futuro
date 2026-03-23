@@ -1,65 +1,122 @@
-Finova: Agente Financeiro Inteligente
-A Finova é um agente proativo de inteligência financeira desenvolvido para transformar dados brutos em consultoria estratégica. Ao contrário de assistentes reativos, a Finova analisa históricos de transações e perfis de investimento para antecipar necessidades, sugerir metas e garantir decisões seguras baseadas em dados reais.
+# 💡 Finova — Agente Financeiro Inteligente com IA Generativa
 
-Este projeto é a minha solução para o desafio BIA do Futuro (DIO).
+> Consultora financeira didática, assertiva e acessível — desenvolvida como solução para o desafio [DIO · Bia do Futuro](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro).
 
-🎯 O que a Finova faz?
-A solução foi desenhada para atuar em três pilares principais:
+---
 
-Antecipação: Identifica padrões de gastos e alerta sobre desvios antes que o orçamento seja comprometido.
+## Sobre o Projeto
 
-Personalização: Cruza o histórico de transações com o perfil do investidor para oferecer produtos financeiros adequados.
+A **Finova** resolve um problema real: a maioria dos brasileiros não sabe por onde começar a investir. Não por falta de dinheiro, mas por falta de orientação personalizada e acessível.
 
-Segurança (Anti-alucinação): Utiliza uma base de conhecimento fechada (RAG-ready) para garantir que nenhuma recomendação financeira seja inventada.
+A Finova analisa o perfil real do cliente — renda, metas, gastos, tolerância a risco — e responde como uma consultora especialista, de forma didática e sem jargões. Ela **educa para a decisão**, mas nunca recomenda investimentos específicos.
 
-📂 Estrutura do Projeto
-O desenvolvimento foi dividido em camadas para garantir escalabilidade e organização:
+---
 
-1. Documentação e Estratégia (/docs)
-Caso de Uso & Arquitetura: Definição da persona, fluxo de dados e como a Finova resolve problemas reais.
+## Funcionalidades
 
-Base de Conhecimento: Estratégia de consumo dos dados (CSV/JSON).
+- 💬 **Chat com IA** contextualizado com dados reais do cliente
+- 📊 **Análise de perfil** — patrimônio, reserva de emergência, metas e prazos
+- 💸 **Diagnóstico de gastos** — categorias, taxa de poupança, transações
+- 📦 **Catálogo de produtos** filtrado por perfil de risco
+- 🌐 **Busca de mercado em tempo real** integrada às respostas
+- 🛡️ **Guardrails de segurança** — sem alucinação, sem recomendação indevida
 
-Engenharia de Prompts: System prompts detalhados e tratamento de casos críticos.
+---
 
-Métricas de Avaliação: Como medimos a assertividade e segurança das respostas.
+## Estrutura do Repositório
 
-Pitch de Negócio: Roteiro da apresentação da solução.
+```
+📁 dio-lab-bia-do-futuro/
+├── 📁 data/
+│   ├── perfil_investidor.json        # Perfis: João Silva (moderado) e Daniel Santos (arrojado)
+│   ├── produtos_financeiros.json     # Tesouro Selic, CDB, LCI/LCA, Fundos
+│   ├── transacoes.csv                # Histórico de transações (out/2025)
+│   └── historico_atendimento.csv     # Histórico de atendimentos anteriores
+│
+├── 📁 docs/
+│   ├── 01-documentacao-agente.md     # Caso de uso, persona, arquitetura e guardrails
+│   ├── 02-base-conhecimento.md       # Estratégia de dados e injeção de contexto
+│   ├── 03-prompts.md                 # System prompt + exemplos de interação + edge cases
+│   ├── 04-metricas.md                # Métricas, bateria de testes e matriz de risco
+│   └── 05-pitch.md                   # Roteiro cronometrado do pitch (3 minutos)
+│
+├── 📁 src/
+│   ├── app.py                        # Aplicação Streamlit funcional
+│   └── requirements.txt
+│
+└── 📁 assets/
+    └── Finova_Pitch.pptx             # Slides do pitch (9 slides)
+```
 
-2. Base de Dados (/data)
-Utilização de dados mockados para simular um ambiente real:
+---
 
-transacoes.csv: Histórico financeiro detalhado.
+## Como Executar
 
-perfil_investidor.json: Tolerância de acordo com objetivo e restrições do cliente.
+```bash
+# 1. Instalar dependências
+pip install -r src/requirements.txt
 
-produtos_financeiros.json: Catálogo de investimentos disponíveis.
+# 2. Configurar a chave da API Anthropic
+export ANTHROPIC_API_KEY=sk-...
 
-3. Implementação Técnica (/src)
-Integração com LLM: Uso da API do gpt-oss para processamento de linguagem natural.
+# 3. Rodar a aplicação
+streamlit run src/app.py
+```
 
-Lógica de Dados: Scripts em Python para leitura e filtragem de contexto financeiro.
+---
 
-Interface: Protótipo funcional desenvolvido para interação em tempo real.
+## Arquitetura
 
-🛠️ Tecnologias Utilizadas
-Linguagem: Python
+```
+Interface (Streamlit / Widget)
+        │
+        ▼
+Contexto injetado (JSON + CSV do cliente)
+        │
+        ▼
+LLM — Claude Sonnet via API Anthropic
+     + Web Search (mercado em tempo real)
+        │
+        ▼
+Guardrails de validação
+(sem alucinação · sem recomendação · admite limitações)
+```
 
-IA Generativa: Chat GTP 5.2 API
+---
 
-Análise de Dados: Pandas & Numpy
+## Segurança e Limites Declarados
 
-Ambiente: Ollama / VSCode
+| O que a Finova FAZ | O que a Finova NÃO FAZ |
+|---|---|
+| Explica como produtos financeiros funcionam | Recomendar investimentos específicos |
+| Analisa gastos e metas com dados reais | Acessar dados bancários sensíveis |
+| Admite quando não tem uma informação | Inventar números ou rentabilidades |
+| Redireciona para profissional quando necessário | Substituir um assessor certificado pela CVM |
 
-Documentação: Markdown & Mermaid.js (Diagramas)
+---
 
-🚀 Como visualizar a solução
-Navegue até a pasta /docs para entender a base teórica e de segurança.
+## Tecnologias
 
-Acesse a pasta /src para revisar o código fonte da aplicação e a lógica de integração com a IA.
+- **LLM:** Claude Sonnet (Anthropic API)
+- **Interface:** Streamlit · HTML/JS (Claude Artifacts)
+- **Dados:** JSON + CSV mockados
+- **Busca:** Web Search integrada via API
 
-Confira os exemplos de interação documentados em Prompts.
+---
 
-Desenvolvido por Lucas Daniel de Oliveira Santos
-Junior Data Analyst | Certificado Google Data Analytics
+## Documentação
+
+| Arquivo | Conteúdo |
+|---|---|
+| [`docs/01-documentacao-agente.md`](docs/01-documentacao-agente.md) | Caso de uso, persona, arquitetura |
+| [`docs/02-base-conhecimento.md`](docs/02-base-conhecimento.md) | Estrutura dos dados e estratégia de contexto |
+| [`docs/03-prompts.md`](docs/03-prompts.md) | System prompt e exemplos de interação |
+| [`docs/04-metricas.md`](docs/04-metricas.md) | Métricas de qualidade e testes |
+| [`docs/05-pitch.md`](docs/05-pitch.md) | Roteiro do pitch de 3 minutos |
+
+---
+
+*Desenvolvido por **Lucas Daniel de Oliveira Santos** · Desafio DIO — Bia do Futuro*
+```
 LinkedIn - https://www.linkedin.com/in/daniel-santos-b3425a2a5/
+```
