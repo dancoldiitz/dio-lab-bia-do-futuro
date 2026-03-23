@@ -29,22 +29,25 @@ Crie testes simples para validar seu agente:
 ### Teste 1: Consulta de gastos
 - **Pergunta:** "Quanto gastei com alimentação?"
 - **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** "Com base nas suas transações de outubro/2025, João, você gastou R$ 570 em alimentação — divididos entre supermercado (R$ 450) e restaurante (R$ 120)."
 
 ### Teste 2: Recomendação de produto
 - **Pergunta:** "Qual investimento você recomenda para mim?"
 - **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** "Boa pergunta, João! Mas vou ser direta: não é meu papel recomendar investimentos específicos — isso é função de um assessor de investimentos regulamentado pela CVM, que conhece sua situação completa e tem responsabilidade legal pela indicação.
+O que posso fazer — e faço bem — é te explicar como cada tipo de produto funciona para que você tome a decisão com mais segurança. Por exemplo, posso te explicar a diferença entre liquidez diária e carência, como funciona a isenção de IR no LCI/LCA, ou o que significa investir em 100% do CDI na prática."
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
 - **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** Essa tá fora da minha área! Sou especialista em finanças, não em meteorologia — para isso o Google Clima atende melhor!
+Mas se tiver alguma dúvida sobre suas metas, gastos ou como o dinheiro pode trabalhar por você, é só perguntar. O que mais posso te ajudar no campo financeiro, João?"
 
 ### Teste 4: Informação inexistente
 - **Pergunta:** "Quanto rende o produto XYZ?"
 - **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** "Não tenho essa informação, João! O produto "BBC3" não está na base de dados que tenho acesso, e não seria responsável da minha parte inventar números sobre rentabilidade.
+O que posso te ajudar é a entender como funcionam os produtos disponíveis no seu perfil — Tesouro Selic, CDB, LCI/LCA e Fundo Multimercado. Quer que eu explique algum deles?"
 
 ---
 
@@ -53,10 +56,10 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+- A respostas foram satisfatórias.
 
 **O que pode melhorar:**
-- [Liste aqui]
+- O tempo de resposta.
 
 ---
 
