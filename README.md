@@ -1,149 +1,65 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+Finova: Agente Financeiro Inteligente
+A Finova é um agente proativo de inteligência financeira desenvolvido para transformar dados brutos em consultoria estratégica. Ao contrário de assistentes reativos, a Finova analisa históricos de transações e perfis de investimento para antecipar necessidades, sugerir metas e garantir decisões seguras baseadas em dados reais.
 
-## Contexto
+Este projeto é a minha solução para o desafio BIA do Futuro (DIO).
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+🎯 O que a Finova faz?
+A solução foi desenhada para atuar em três pilares principais:
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+Antecipação: Identifica padrões de gastos e alerta sobre desvios antes que o orçamento seja comprometido.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Personalização: Cruza o histórico de transações com o perfil do investidor para oferecer produtos financeiros adequados.
 
----
+Segurança (Anti-alucinação): Utiliza uma base de conhecimento fechada (RAG-ready) para garantir que nenhuma recomendação financeira seja inventada.
 
-## O Que Você Deve Entregar
+📂 Estrutura do Projeto
+O desenvolvimento foi dividido em camadas para garantir escalabilidade e organização:
 
-### 1. Documentação do Agente
+1. Documentação e Estratégia (/docs)
+Caso de Uso & Arquitetura: Definição da persona, fluxo de dados e como a Finova resolve problemas reais.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+Base de Conhecimento: Estratégia de consumo dos dados (CSV/JSON).
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+Engenharia de Prompts: System prompts detalhados e tratamento de casos críticos.
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+Métricas de Avaliação: Como medimos a assertividade e segurança das respostas.
 
----
+Pitch de Negócio: Roteiro da apresentação da solução.
 
-### 2. Base de Conhecimento
+2. Base de Dados (/data)
+Utilização de dados mockados para simular um ambiente real:
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+transacoes.csv: Histórico financeiro detalhado.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+perfil_investidor.json: Tolerância de acordo com objetivo e restrições do cliente.
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+produtos_financeiros.json: Catálogo de investimentos disponíveis.
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+3. Implementação Técnica (/src)
+Integração com LLM: Uso da API do gpt-oss para processamento de linguagem natural.
 
----
+Lógica de Dados: Scripts em Python para leitura e filtragem de contexto financeiro.
 
-### 3. Prompts do Agente
+Interface: Protótipo funcional desenvolvido para interação em tempo real.
 
-Documente os prompts que definem o comportamento do seu agente:
+🛠️ Tecnologias Utilizadas
+Linguagem: Python
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+IA Generativa: Chat GTP 5.2 API
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+Análise de Dados: Pandas & Numpy
 
----
+Ambiente: Ollama / VSCode
 
-### 4. Aplicação Funcional
+Documentação: Markdown & Mermaid.js (Diagramas)
 
-Desenvolva um **protótipo funcional** do seu agente:
+🚀 Como visualizar a solução
+Navegue até a pasta /docs para entender a base teórica e de segurança.
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
+Acesse a pasta /src para revisar o código fonte da aplicação e a lógica de integração com a IA.
 
-📁 **Pasta:** [`src/`](./src/)
+Confira os exemplos de interação documentados em Prompts.
 
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
-
----
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Desenvolvido por Lucas Daniel de Oliveira Santos
+Junior Data Analyst | Certificado Google Data Analytics
+LinkedIn - https://www.linkedin.com/in/daniel-santos-b3425a2a5/
